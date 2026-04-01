@@ -1,5 +1,62 @@
 #include "def.h"
 
+void afis(TCub cub)
+{
+    TNod q;
+    int i, j;
+    for (i = N - 1; i >= 0; --i) {
+        q = cub->D[i]->prev_D; printf("      %c ", q->c);
+        q = q->prev_D; printf("%c ", q->c);
+        q = q->prev_D; printf("%c\n", q->c);
+    }
+    for (i = 0; i < N; ++i) {
+        q = cub->H[i]->prev_H->prev_H->prev_H; printf("%c ", q->c);
+        q = q->next_H; printf("%c ", q->c);
+        q = q->next_H; printf("%c ", q->c);
+        q = cub->H[i]->next_H; printf("%c ", q->c);
+        for (j = 0; j < 8; ++j) {
+            q = q->next_H; printf("%c ", q->c);
+        }
+        printf("\n");
+    }
+    for (i = 0; i < N; ++i) {
+        q = cub->D[i]->next_D->next_D->next_D->next_D; printf("      %c ", q->c);
+        q = q->next_D; printf("%c ", q->c);
+        q = q->next_D; printf("%c\n", q->c);
+    }
+    
+}
+
+void Rotate(const char *c, TCub cub)
+{
+    printf("%s ", c);
+    if (!strcmp(c, "F")) {
+        Front(cub);
+    } else if (!strcmp(c, "F\'")){
+        Front_Inverted(cub);
+    } else if (!strcmp(c, "L")) {
+        Left(cub);
+    } else if (!strcmp(c, "L\'")) {
+        Left_Inverted(cub);
+    } else if (!strcmp(c, "R")) {
+        Right(cub);
+    } else if (!strcmp(c, "R\'")) {
+        Right_Inverted(cub);
+    } else if (!strcmp(c, "U")) {
+        Up(cub);
+    } else if (!strcmp(c, "U\'")) {
+        Up_Inverted(cub);
+    } else if (!strcmp(c, "D")) {
+        Down(cub);
+    } else if (!strcmp(c, "D\'")) {
+        Down_Inverted(cub);
+    } else if (!strcmp(c, "B")) {
+        Back(cub);
+    } else if (!strcmp(c, "B\'")) {
+        Back_Inverted(cub);
+    }
+}
+
 TCub Init_Cub()
 {
     int i;

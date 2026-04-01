@@ -1,5 +1,5 @@
 build:
-	gcc -Wall src/main.c src/func.c -o solver.exe
+	gcc -Wall src/main.c src/func.c src/Moves.c -o solver.exe
 
 run:
 	./solver.exe

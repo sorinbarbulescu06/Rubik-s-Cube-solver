@@ -12,12 +12,7 @@ int main()
         goto eroare_2;
     }
 
-    TNod t = cub->L[0]->next_L;
-    while (t != cub->L[0]) {
-        printf("%c ", t->c);
-        t = t->next_L;
-    }
-
+    afis(cub);
     return 0;
 
 eroare_2:
