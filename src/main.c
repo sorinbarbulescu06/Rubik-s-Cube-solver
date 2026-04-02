@@ -13,6 +13,10 @@ int main()
     }
 
     afis(cub);
+    Rotate("ML'", cub);
+    printf("\n");
+    afis(cub);
+
     return 0;
 
 eroare_2:

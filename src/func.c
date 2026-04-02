@@ -32,7 +32,7 @@ void Rotate(const char *c, TCub cub)
     printf("%s ", c);
     if (!strcmp(c, "F")) {
         Front(cub);
-    } else if (!strcmp(c, "F\'")){
+    } else if (!strcmp(c, "F\'")) {
         Front_Inverted(cub);
     } else if (!strcmp(c, "L")) {
         Left(cub);
@@ -48,13 +48,27 @@ void Rotate(const char *c, TCub cub)
         Up_Inverted(cub);
     } else if (!strcmp(c, "D")) {
         Down(cub);
-    } else if (!strcmp(c, "D\'")) {
+    } else if (!strcmp(c, "D\'")){
         Down_Inverted(cub);
     } else if (!strcmp(c, "B")) {
         Back(cub);
     } else if (!strcmp(c, "B\'")) {
         Back_Inverted(cub);
+    } else if (!strcmp(c, "ML")) {
+        ML(cub);
+    } else if (!strcmp(c, "ML\'")) {
+        ML_Inverted(cub);
+    } else if (!strcmp(c, "MD")) {
+        MD(cub);
+    } else if (!strcmp(c, "MD\'")) {
+        MD_Inverted(cub);
+    } else if (!strcmp(c, "MH")) {
+        MH(cub);
+    } else if (!strcmp(c, "MH\'")) {
+        MH_Inverted(cub);
     }
+
+
 }
 
 TCub Init_Cub()
