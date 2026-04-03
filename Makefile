@@ -1,8 +1,10 @@
+all: clean build run
+
 build:
-	gcc -Wall src/main.c src/func.c src/Moves.c -o solver.exe
+	@gcc -Wall src/main.c src/func.c src/Moves.c src/alg.c -o solver.exe
 
 run:
-	./solver.exe
+	@./solver.exe
 
 clean:
-	rm -f solver.exe
+	@rm -f solver.exe

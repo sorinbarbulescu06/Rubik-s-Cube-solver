@@ -13,9 +13,18 @@ int main()
     }
 
     afis(cub);
-    Rotate("ML'", cub);
-    printf("\n");
-    afis(cub);
+
+    //pas1
+    /*printf("Pasul 1 : Crucea Alba .................");
+    if (CheckPas1(cub) == 0) {
+        printf("Unsolved, giving you the alg:\n");
+        if (SolvePas1(cub) == 1) {
+            printf("Eroare la introducerea cubului sau piesele shiftate\n");
+            return 0;
+        }
+    }
+    printf("Solved, next step:\n");
+*/
 
     return 0;
 

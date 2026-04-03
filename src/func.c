@@ -1,29 +1,51 @@
 #include "def.h"
 
+void verif(char c)
+{
+    if(c == 'W')
+        printf("%s  %s", BG_ALB, RESET);
+    if(c == 'G')
+        printf("%s  %s", BG_VERDE, RESET);
+    if(c == 'B')
+        printf("%s  %s", BG_ALBASTRU, RESET);
+    if(c == 'R')
+        printf("%s  %s", BG_ROSU, RESET);
+    if(c == 'O')
+        printf("%s  %s", BG_ORANJ, RESET);
+    if(c == 'Y')
+        printf("%s  %s", BG_GALBEN, RESET);
+}
+
 void afis(TCub cub)
 {
     TNod q;
     int i, j;
     for (i = N - 1; i >= 0; --i) {
-        q = cub->D[i]->prev_D; printf("      %c ", q->c);
-        q = q->prev_D; printf("%c ", q->c);
-        q = q->prev_D; printf("%c\n", q->c);
+        q = cub->D[i]->prev_D; printf("       "); verif(q->c);
+        q = q->prev_D; verif(q->c);
+        q = q->prev_D; verif(q->c); printf("\n");
     }
     for (i = 0; i < N; ++i) {
-        q = cub->H[i]->prev_H->prev_H->prev_H; printf("%c ", q->c);
-        q = q->next_H; printf("%c ", q->c);
-        q = q->next_H; printf("%c ", q->c);
-        q = cub->H[i]->next_H; printf("%c ", q->c);
+        q = cub->H[i]->prev_H->prev_H->prev_H; verif(q->c);
+        q = q->next_H; verif(q->c);
+        q = q->next_H; verif(q->c);
+        printf(" ");
+        q = cub->H[i]->next_H; verif(q->c);
         for (j = 0; j < 8; ++j) {
-            q = q->next_H; printf("%c ", q->c);
+            q = q->next_H; verif(q->c);
+            if(j == 1 || j == 4)
+                printf(" ");
         }
         printf("\n");
     }
     for (i = 0; i < N; ++i) {
-        q = cub->D[i]->next_D->next_D->next_D->next_D; printf("      %c ", q->c);
-        q = q->next_D; printf("%c ", q->c);
-        q = q->next_D; printf("%c\n", q->c);
+        q = cub->D[i]->next_D->next_D->next_D->next_D; printf("       "); verif(q->c);
+        q = q->next_D; verif(q->c);
+        q = q->next_D; verif(q->c);
+        printf("\n");
     }
+    printf("\n");
+    
     
 }
 
@@ -138,12 +160,14 @@ TCub citire(TCub cub)
 {
     int i, j, k;
     
+    FILE *f = fopen("src/input.in","r");
+
     //branch-ul H
     for (i = 0; i < N; ++i) {
         TNod p = cub->H[i];
         for (j = 0; j < 12; ++j) {//Y,W,O,R,G,B
             TNod t = (TNod)malloc(sizeof(NSize));
-            scanf("%c", &t->c);
+            fscanf(f, "%c", &t->c);
             p->next_H = t;
             t->prev_H = p;
             p = p->next_H;
@@ -165,7 +189,7 @@ TCub citire(TCub cub)
         }
         for (i = 0; i < N; ++i) {
             TNod t = (TNod)malloc(sizeof(NSize));
-            scanf("%c", &t->c);
+            fscanf(f, "%c", &t->c);
             p->next_L = t;
             t->prev_L = p;
             p = p->next_L;
@@ -180,7 +204,7 @@ TCub citire(TCub cub)
         }
         for (i = 0; i < N; ++i) {
             TNod t = (TNod)malloc(sizeof(NSize));
-            scanf("%c", &t->c);
+            fscanf(f, "%c", &t->c);
             p->next_L = t;
             t->prev_L = p;
             p = p->next_L;
