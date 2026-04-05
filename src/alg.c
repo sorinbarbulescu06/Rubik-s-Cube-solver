@@ -20,7 +20,7 @@ int CheckPas1(TCub cub)
 }
 
 int SolvePas1(TCub cub)
-{
+{    
     
     return 0;
 }

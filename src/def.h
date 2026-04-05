@@ -26,6 +26,12 @@ typedef struct cub {
     TNod *H;
     TNod *L;
     TNod *D;
+    TNod F_M;
+    TNod L_M;
+    TNod R_M;
+    TNod U_M;
+    TNod D_M;
+    TNod B_M;
 }size_cub, *TCub;
 
 //func.c

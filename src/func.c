@@ -51,7 +51,7 @@ void afis(TCub cub)
 
 void Rotate(const char *c, TCub cub)
 {
-    printf("%s ", c);
+    printf("%s\n", c);
     if (!strcmp(c, "F")) {
         Front(cub);
     } else if (!strcmp(c, "F\'")) {
@@ -88,8 +88,31 @@ void Rotate(const char *c, TCub cub)
         MH(cub);
     } else if (!strcmp(c, "MH\'")) {
         MH_Inverted(cub);
+    } else if (!strcmp(c, "Cube_Left")) {
+        Up_Inverted(cub);
+        Down(cub);
+        MH_Inverted(cub);
+    } else if (!strcmp(c, "Cube_Right")) {
+        Up(cub);
+        Down_Inverted(cub);
+        MH(cub);
+    } else if (!strcmp(c, "Cube_Up")) {
+        Right_Inverted(cub);
+        Left(cub);
+        ML(cub);
+    } else if (!strcmp(c, "Cube_Down")) {
+        Right(cub);
+        Left_Inverted(cub);
+        ML_Inverted(cub);
+    } else if (!strcmp(c, "Barrel_Right")) {
+        Front_Inverted(cub);
+        Back(cub);
+        MD_Inverted(cub);
+    } else if (!strcmp(c, "Barrel_Left")) {
+        Front(cub);
+        Back_Inverted(cub);
+        MD(cub);
     }
-
 
 }
 

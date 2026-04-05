@@ -13,9 +13,17 @@ int main()
     }
 
     afis(cub);
+    while (1) {
+        char c[15];
+        scanf("%s", c);
+        Rotate(c, cub);
+        afis(cub);
+    }
 
-    //pas1
-    /*printf("Pasul 1 : Crucea Alba .................");
+    
+
+pas1:
+    printf("Pasul 1 : Crucea Alba .................");
     if (CheckPas1(cub) == 0) {
         printf("Unsolved, giving you the alg:\n");
         if (SolvePas1(cub) == 1) {
@@ -24,7 +32,6 @@ int main()
         }
     }
     printf("Solved, next step:\n");
-*/
 
     return 0;
 
