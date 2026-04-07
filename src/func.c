@@ -44,14 +44,13 @@ void afis(TCub cub)
         q = q->next_D; verif(q->c);
         printf("\n");
     }
-    printf("\n");
-    
-    
 }
 
-void Rotate(const char *c, TCub cub)
+void Rotate(const char *c, TCub cub, int output)
 {
-    printf("%s\n", c);
+    if(output == 1){
+        printf("%s ", c);
+    }
     if (!strcmp(c, "F")) {
         Front(cub);
     } else if (!strcmp(c, "F\'")) {
@@ -274,5 +273,19 @@ TCub citire(TCub cub)
         p->next_D = cub->D[k];
         cub->D[k]->prev_D = p;
     }
+
+    //identificare mijloace relative
+    cub->F_M = cub->L[1]->next_L->next_L;
+    cub->B_M = cub->L[1]->prev_L->prev_L->prev_L->prev_L->prev_L;
+    cub->U_M = cub->L[1]->prev_L->prev_L;
+    cub->D_M = cub->L[1]->next_L->next_L->next_L->next_L->next_L;
+    cub->L_M = cub->H[1]->prev_H->prev_H;
+    cub->R_M = cub->H[1]->next_H->next_H->next_H->next_H->next_H;
+
     return cub;
+}
+
+char culoare(TNod t)
+{
+    return t->c;
 }

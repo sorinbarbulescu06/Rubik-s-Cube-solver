@@ -3,6 +3,7 @@
 #include <string.h>
 
 #define N 3
+#define Nr_Fete 4
 #define BG_ROSU     "\033[41m"
 #define BG_ALBASTRU "\033[44m"
 #define BG_ORANJ    "\033[48;5;208m"
@@ -38,7 +39,8 @@ typedef struct cub {
 TCub Init_Cub();
 TCub citire(TCub cub);
 void afis(TCub cub);
-void Rotate(const char *c, TCub cub);
+void Rotate(const char *c, TCub cub, int output);
+char culoare(TNod t);
 
 //func.c
 void Front(TCub cub);
@@ -60,6 +62,16 @@ void MD_Inverted(TCub cub);
 void MH(TCub cub);
 void MH_Inverted(TCub cub);
 
-//alg.c
+//step1.c
 int CheckPas1(TCub cub);
-int SolvePas1(TCub cub);
+void SolvePas1(TCub cub);
+int Search_Up(TCub cub, char c);
+int Search_FR(TCub cub, char c);
+int Search_SR(TCub cub, char c);
+int Search_TR(TCub cub, char c);
+int Search_Down(TCub cub, char c);
+void Alg_Up(TCub cub, int cnt);
+void Alg_FR(TCub cub, int cnt);
+void Alg_SR(TCub cub, int cnt);
+void Alg_TR(TCub cub, int cnt);
+void Alg_Down(TCub cub, int cnt);

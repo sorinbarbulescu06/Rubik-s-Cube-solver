@@ -8,25 +8,21 @@ int main()
         goto eroare_1;
     }
 
+    printf("Citeste cubul cu fata alba in sus\n");
+
     if(citire(cub) == NULL) {
         goto eroare_2;
     }
 
+    Rotate("Cube_Down", cub, 0);
     afis(cub);
-    while (1) {
-        char c[15];
-        scanf("%s", c);
-        Rotate(c, cub);
-        afis(cub);
-    }
 
-    
-
-pas1:
-    printf("Pasul 1 : Crucea Alba .................");
+    //pas1
+    printf("Pasul 1: Crucea Alba .................");
     if (CheckPas1(cub) == 0) {
-        printf("Unsolved, giving you the alg:\n");
-        if (SolvePas1(cub) == 1) {
+        printf("Nerezolvat\nRezolva cu algoritmul:\n");
+        SolvePas1(cub);
+        if(CheckPas1(cub) == 0) {
             printf("Eroare la introducerea cubului sau piesele shiftate\n");
             return 0;
         }
