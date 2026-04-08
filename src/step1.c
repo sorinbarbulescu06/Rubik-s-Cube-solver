@@ -239,7 +239,7 @@ void Alg_SR(TCub cub, int cnt)
         Rotate("ML", cub, 1);
         Rotate("D", cub, 1);
         Rotate("ML\'", cub, 1);
-        Rotate("D", cub, 1);
+        Rotate("D\'", cub, 1);
         Rotate("F", cub, 1);
         Rotate("F", cub, 1);
         Rotate("MH", cub , 1);

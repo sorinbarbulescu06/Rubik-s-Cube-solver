@@ -36,6 +36,8 @@ void SolvePas2(TCub cub)
         //verificam pe primul rand
         Search_FR2L(cub);
 
+        
+
         printf("Nimic de rezolvat pe aceasta fata\n");
         Rotate("Cube_Right", cub, 1);
         printf("\n");
