@@ -72,9 +72,11 @@ void SolvePas1(TCub cub)
             continue;   
         }
         printf("Nimic de rezolvat pe aceasta fata\n");
+        afis(cub);
         Rotate("Cube_Right", cub, 1);
         printf("\n");
     }
+    printf("\n");
 }
 
 int Search_Up(TCub cub, char c)
@@ -212,18 +214,18 @@ void Alg_FR(TCub cub, int cnt)
 void Alg_SR(TCub cub, int cnt)
 {
     int i;
+    char mid = cub->F_M->c;
     if (cnt >= 0) {
         for (i = 0; i < cnt; ++i)
             Rotate("MH", cub, 1);
-        
-        if ((culoare(cub->F_M->prev_H) == culoare(cub->U_M)) && (culoare(cub->F_M) == culoare(cub->L_M->next_H)))
-            Rotate("F\'", cub, 1);
-        else
+        if ((culoare(cub->F_M->prev_H) == culoare(cub->U_M)) && (mid == culoare(cub->L_M->next_H)))
             Rotate("F", cub, 1);
+        else
+            Rotate("F\'", cub, 1);
         Rotate("ML", cub, 1);
         Rotate("D", cub, 1);
         Rotate("ML\'", cub, 1);
-        Rotate("D", cub, 1);
+        Rotate("D\'", cub, 1);
         Rotate("F", cub, 1);
         Rotate("F", cub, 1);
         for (i = 0; i < cnt; ++i)

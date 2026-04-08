@@ -459,7 +459,6 @@ void Right(TCub cub)
 
 void Right_Inverted(TCub cub)
 {
-    printf("aici \n");
     int i;
     //rotim felia
     for (i = 0; i < N; ++i) {

@@ -289,3 +289,55 @@ char culoare(TNod t)
 {
     return t->c;
 }
+
+void Solve(TCub cub)
+{
+    //pas1
+    printf("Pasul 1: Crucea Alba .................");
+    if (CheckPas1(cub) == 0) {
+        printf("Nerezolvat\nRezolva cu algoritmul:\n");
+        SolvePas1(cub);
+        if(CheckPas1(cub) == 0) {
+            printf("Eroare la introducerea cubului sau piesele shiftate\n");
+            return;
+        }
+    }
+    printf("Solved, next step:\n");
+
+    //pas2
+    printf("Pasul 2: Fata alba .................");
+    if (CheckPas2(cub) == 0) {
+        printf("Nerezolvat\nRezolva cu algoritmul:\n");
+        SolvePas2(cub);
+        if(CheckPas2(cub) == 0) {
+            printf("Eroare la introducerea cubului sau piesele shiftate\n");
+            return;
+        }
+    }
+    printf("Solved, next step:\n");
+    
+    /*pas1 
+    printf("Pasul 1: Crucea Alba .................");
+    if (CheckPas1(cub) == 0) {
+        printf("Nerezolvat\nRezolva cu algoritmul:\n");
+        SolvePas1(cub);
+        if(CheckPas1(cub) == 0) {
+            printf("Eroare la introducerea cubului sau piesele shiftate\n");
+            return 0;
+        }
+    }
+    printf("Solved, next step:\n");
+
+    //pas1
+    printf("Pasul 1: Crucea Alba .................");
+    if (CheckPas1(cub) == 0) {
+        printf("Nerezolvat\nRezolva cu algoritmul:\n");
+        SolvePas1(cub);
+        if(CheckPas1(cub) == 0) {
+            printf("Eroare la introducerea cubului sau piesele shiftate\n");
+            return 0;
+        }
+    }
+    printf("Solved, next step:\n");
+    */
+}

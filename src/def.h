@@ -41,8 +41,9 @@ TCub citire(TCub cub);
 void afis(TCub cub);
 void Rotate(const char *c, TCub cub, int output);
 char culoare(TNod t);
+void Solve(TCub cub);
 
-//func.c
+//Moves.c
 void Front(TCub cub);
 void Front_Inverted(TCub cub);
 void Back(TCub cub);
@@ -75,3 +76,15 @@ void Alg_FR(TCub cub, int cnt);
 void Alg_SR(TCub cub, int cnt);
 void Alg_TR(TCub cub, int cnt);
 void Alg_Down(TCub cub, int cnt);
+
+//step2.c
+int CheckPas2(TCub cub);
+void SolvePas2(TCub cub);
+void Corner_Up_Left(TCub cub);
+void Corner_Up_Right(TCub cub);
+void Alg_Left_Corner(TCub cub);
+void Alg_Right_Corner(TCub cub);
+int cmp_UL(TCub cub, char mid, char left);
+int cmp_UR(TCub cub, char mid, char right);
+int Search_FR2R(TCub cub);
+int Search_FR2L(TCub cub);

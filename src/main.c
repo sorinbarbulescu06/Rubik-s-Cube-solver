@@ -16,19 +16,8 @@ int main()
 
     Rotate("Cube_Down", cub, 0);
     afis(cub);
-
-    //pas1
-    printf("Pasul 1: Crucea Alba .................");
-    if (CheckPas1(cub) == 0) {
-        printf("Nerezolvat\nRezolva cu algoritmul:\n");
-        SolvePas1(cub);
-        if(CheckPas1(cub) == 0) {
-            printf("Eroare la introducerea cubului sau piesele shiftate\n");
-            return 0;
-        }
-    }
-    printf("Solved, next step:\n");
-
+    
+    Solve(cub);
     return 0;
 
 eroare_2:
