@@ -216,33 +216,41 @@ void Alg_SR(TCub cub, int cnt)
     int i;
     char mid = cub->F_M->c;
     if (cnt >= 0) {
-        for (i = 0; i < cnt; ++i)
-            Rotate("MH", cub, 1);
-        if ((culoare(cub->F_M->prev_H) == culoare(cub->U_M)) && (mid == culoare(cub->L_M->next_H)))
-            Rotate("F", cub, 1);
-        else
+        if(cnt == 1 && cub->F_M->next_H->c == cub->F_M->c){
             Rotate("F\'", cub, 1);
-        Rotate("ML", cub, 1);
-        Rotate("D", cub, 1);
-        Rotate("ML\'", cub, 1);
-        Rotate("D\'", cub, 1);
-        Rotate("F", cub, 1);
-        Rotate("F", cub, 1);
-        for (i = 0; i < cnt; ++i)
-            Rotate("MH\'", cub, 1);
+        } else {
+            for (i = 0; i < cnt; ++i)
+                Rotate("MH", cub, 1);
+            if ((culoare(cub->F_M->prev_H) == culoare(cub->U_M)) && (mid == culoare(cub->L_M->next_H)))
+                Rotate("F", cub, 1);
+            else
+                Rotate("F\'", cub, 1);
+            Rotate("ML", cub, 1);
+            Rotate("D", cub, 1);
+            Rotate("ML\'", cub, 1);
+            Rotate("D\'", cub, 1);
+            Rotate("F", cub, 1);
+            Rotate("F", cub, 1);
+            for (i = 0; i < cnt; ++i)
+                Rotate("MH\'", cub, 1);
+        }
     } else {
-        Rotate("MH\'", cub, 1);
-         if ((culoare(cub->F_M->prev_H) == culoare(cub->U_M)) && (culoare(cub->F_M) == culoare(cub->L_M->next_H)))
-            Rotate("F\'", cub, 1);
-        else
+        if(cub->F_M->c != cub->F_M->prev_H->c){
+            Rotate("MH\'", cub, 1);
+            if ((culoare(cub->F_M->prev_H) == culoare(cub->U_M)) && (culoare(cub->F_M) == culoare(cub->L_M->next_H)))
+                Rotate("F\'", cub, 1);
+            else
+                Rotate("F", cub, 1);
+            Rotate("ML", cub, 1);
+            Rotate("D", cub, 1);
+            Rotate("ML\'", cub, 1);
+            Rotate("D\'", cub, 1);
             Rotate("F", cub, 1);
-        Rotate("ML", cub, 1);
-        Rotate("D", cub, 1);
-        Rotate("ML\'", cub, 1);
-        Rotate("D\'", cub, 1);
-        Rotate("F", cub, 1);
-        Rotate("F", cub, 1);
-        Rotate("MH", cub , 1);
+            Rotate("F", cub, 1);
+            Rotate("MH", cub , 1);
+        } else {
+            Rotate("F", cub, 1);
+        }
     }
 }
 

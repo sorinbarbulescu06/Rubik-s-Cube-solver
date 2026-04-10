@@ -86,5 +86,6 @@ void Alg_Left_Corner(TCub cub);
 void Alg_Right_Corner(TCub cub);
 int cmp_UL(TCub cub, char mid, char left);
 int cmp_UR(TCub cub, char mid, char right);
-int Search_FR2R(TCub cub);
 int Search_FR2L(TCub cub);
+int Search_LR(TCub cub);
+int Solve_DF(TCub cub);
