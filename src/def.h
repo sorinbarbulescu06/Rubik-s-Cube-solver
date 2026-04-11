@@ -4,6 +4,7 @@
 
 #define N 3
 #define Nr_Fete 4
+
 #define BG_ROSU     "\033[41m"
 #define BG_ALBASTRU "\033[44m"
 #define BG_ORANJ    "\033[48;5;208m"
@@ -89,3 +90,12 @@ int cmp_UR(TCub cub, char mid, char right);
 int Search_FR2L(TCub cub);
 int Search_LR(TCub cub);
 int Solve_DF(TCub cub);
+
+//step3.c
+int CheckPas3(TCub cub);
+void SolvePas3(TCub cub);
+void Put_Left(TCub cub);
+void Put_Right(TCub cub);
+int Give_Puse(TCub cub);
+int Others(TCub cub);
+void Pune(TCub cub, int gasit);

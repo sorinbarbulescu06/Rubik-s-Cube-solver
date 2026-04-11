@@ -316,19 +316,25 @@ void Solve(TCub cub)
     }
     printf("Solved, next step:\n");
     
-    /*pas1 
-    printf("Pasul 1: Crucea Alba .................");
-    if (CheckPas1(cub) == 0) {
+    //pas3
+    printf("\nRotim cubul invers:\n");
+    Rotate("Barrel_Right", cub, 1);
+    Rotate("Barrel_Right", cub, 1);
+    printf("\n");
+    afis(cub);
+    printf("\n");
+    printf("Pasul 3: Al 2 lea rand .................");
+    if (CheckPas3(cub) == 0) {
         printf("Nerezolvat\nRezolva cu algoritmul:\n");
-        SolvePas1(cub);
-        if(CheckPas1(cub) == 0) {
+        SolvePas3(cub);
+        if(CheckPas3(cub) == 0) {
             printf("Eroare la introducerea cubului sau piesele shiftate\n");
-            return 0;
+            return ;
         }
     }
     printf("Solved, next step:\n");
 
-    //pas1
+    /*pas1
     printf("Pasul 1: Crucea Alba .................");
     if (CheckPas1(cub) == 0) {
         printf("Nerezolvat\nRezolva cu algoritmul:\n");
