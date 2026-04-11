@@ -99,3 +99,8 @@ void Put_Right(TCub cub);
 int Give_Puse(TCub cub);
 int Others(TCub cub);
 void Pune(TCub cub, int gasit);
+
+//step4.c
+int CheckPas4(TCub cub);
+void SolvePas4(TCub cub);
+void Algo(TCub cub);

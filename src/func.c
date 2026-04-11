@@ -334,16 +334,15 @@ void Solve(TCub cub)
     }
     printf("Solved, next step:\n");
 
-    /*pas1
-    printf("Pasul 1: Crucea Alba .................");
-    if (CheckPas1(cub) == 0) {
+    //pas4
+    printf("Pasul 4: Crucea galbena .................");
+    if (CheckPas4(cub) == 0) {
         printf("Nerezolvat\nRezolva cu algoritmul:\n");
-        SolvePas1(cub);
-        if(CheckPas1(cub) == 0) {
+        SolvePas4(cub);
+        if(CheckPas4(cub) == 0) {
             printf("Eroare la introducerea cubului sau piesele shiftate\n");
-            return 0;
+            return ;
         }
     }
     printf("Solved, next step:\n");
-    */
 }
